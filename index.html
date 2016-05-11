@@ -4,9 +4,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <style>
-/* Dropdown Button */
-.dropbtn {
-    background-color: #FFA500;
+.img-responsive {
+    margin: 0 auto;
+	}
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.btn
+{
+	background-color: #FFA500;
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -14,60 +23,32 @@
     cursor: pointer;
 	margin-top:15px;
 	border-radius: 25px;
-
 }
-.img-responsive {
-    margin: 0 auto;
-}
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-menu {
-    display: none;
-    position: relative;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    height: auto;
-    max-height: 200px;
-    text-align:center;
-    overflow-x: hidden;
-}
-
-/* Links inside the dropdown */
-.dropdown-menu a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
 /* Change color of dropdown links on hover */
 .dropdown-menu a:hover {background-color: #f1f1f1}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-menu {
+.btn:hover .dropdown-menu {
     display: block;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
+.btn:hover{
     background-color: #3e8e41;
 }
+.dropdown{text-align:center;}
+.dropdown-menu{margin:10px auto; max-height:200px;}
+.dropdown-menu{width:200px; left:50%; margin-left:-100px;overflow-x:hidden;}
 </style>
 </head>
 <body>
-<div class="col-sm-12 col-lg-12 dropdown" align="center">
+<div class="dropdown">
 				<br/>
 				<br/>
 				<br/>
 				<br/>
-				  <button class="dropbtn">Select the Movie</button>
-				  <div class="dropdown-menu dropdown-menu-center">
+				  <button class="btn btn-primary dropdown-toggle"  type="button" data-toggle="dropdown">Select the Movie</button>
+				  <div class="dropdown-menu centered">
 						<a class="dropdown-item" href="2 States.html"> 2 States</a>
 						<a class="dropdown-item" href="300 Rise of an Empire.html"> 300 Rise of an Empire</a>
 						<a class="dropdown-item" href="47 Ronin.html">47 Ronin</a>
