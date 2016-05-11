@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style>
+ul {
+list-style:none;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+var searchTerm="Kill_Dil";
+var url="http://en.wikipedia.org/w/api.php?action=parse&format=json&page="+searchTerm+"&prop=text&callback=?";
+$.getJSON(url,function(data){
+ wikiHTML = data.parse.text["*"];
+ $wikiDOM = $("<document>"+wikiHTML+"</document>");
+ $text = $wikiDOM.find('.infobox').html();
+ $text = $text.replace(/\n/g,"");
+ $text = $text.replace(/href=\"\/wiki\//g,"href=\"http://en.wikipedia.com/wiki/");
+ $text = $text.replace(/src=\"\/\/upload/g,"src=\"https:\/\/upload");
+ $text = $text.replace(/\[\d+\]/g, "");
+ $("#div_text").append($text);
+});
+</script>
+<div class="col-lg-12"><h1 class="bg-primary text-center"> Summary </h1></div>
+<div id="div_text" class="col-sm-12" align="center" bgcolor="#D6BF86"></div>
+<br/>
+<br/>
+<div class="col-lg-12"><h1 class="bg-primary text-center"> Trailer </h1></div>
+<br/>
+<br/>
+<br/>
+<div class="col-sm-12" align="center">
+<div class="embed-responsive embed-responsive-16by9" align="center">
+ <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jEhnt70rCTI" align="center"></iframe>
+</div>
+</div>
+<div class="col-lg-12"><h1 class="bg-primary text-center"> Prediction </h1></div>
+<div class="col-sm-12" align="center">
+<pre>Our prediction of revenue for this movie is   34.367912   Crores INR.
+ The movie earned  30.16 Crores INR at the box office (We aren't considering non-theatrical business).
+Error of +2% means that the movies released from two weeks prior didn't perform so well.
+Error of +5% means that the movies released from four weeks prior didn't perform so well.
+Error of +10% means that this movie exceeds expectations.
+Error of +15% and above means that this movie is a blockbuster.
+Error of -2% to -5% means that this movie lost to its competitors in its month of release.
+Error of -10% means that this movie is an average hit.
+Error of -15% and below means that this movie is a flop.
+{ Estimate is given in terms of how much can be earned in India. Hence non-hindi films may differ in verdict. }
+</pre>
+</div>
+</body>
+</html>
